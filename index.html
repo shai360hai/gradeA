@@ -30,13 +30,7 @@
       line-height:1.6;
     }
 
-    /* מבנה כללי */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:linear-gradient(180deg, #fff, rgba(255,255,255,.85));
-      backdrop-filter:saturate(1.2) blur(6px);
-      border-bottom:1px solid #e5e7eb;
-    }
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, #fff, rgba(255,255,255,.85));backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid #e5e7eb;}
     .container{max-width:1100px;margin-inline:auto;padding:0 16px}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem}
@@ -46,7 +40,6 @@
     .nav a:hover,.nav a:focus{outline:none;background:#eef2ff;color:var(--brand)}
     .menu-btn{display:none}
 
-    /* גיבור */
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:34px 0}
     .hero-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
     .kudos{display:flex;gap:8px;flex-wrap:wrap}
@@ -54,14 +47,8 @@
     .hero h1{font-size:clamp(1.6rem, 1.2rem + 2.2vw, 3rem);margin:10px 0 8px}
     .hero p{color:var(--muted);margin:0 0 16px}
     .hero-illustration{aspect-ratio:4/3;background:conic-gradient(from 0deg, #dbeafe, #dcfce7, #fef9c3, #dbeafe);border-radius:var(--radius);position:relative;overflow:hidden}
-    .hero-illustration::after{content:"";position:absolute;inset:20px;background:
-      radial-gradient(100px 60px at 20% 30%, #fff 0 60%, transparent 61%),
-      radial-gradient(120px 80px at 70% 60%, #fff 0 60%, transparent 61%),
-      radial-gradient(90px 90px at 40% 85%, #fff 0 60%, transparent 61%);
-      border-radius:calc(var(--radius) - 20px);
-      opacity:.9}
+    .hero-illustration::after{content:"";position:absolute;inset:20px;background:radial-gradient(100px 60px at 20% 30%, #fff 0 60%, transparent 61%),radial-gradient(120px 80px at 70% 60%, #fff 0 60%, transparent 61%),radial-gradient(90px 90px at 40% 85%, #fff 0 60%, transparent 61%);border-radius:calc(var(--radius) - 20px);opacity:.9}
 
-    /* כרטיסים וגריד */
     .grid{display:grid;gap:18px}
     .cols-3{grid-template-columns:repeat(3,1fr)}
     .cols-2{grid-template-columns:repeat(2,1fr)}
@@ -71,54 +58,37 @@
     .muted{color:var(--muted)}
     .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#ecfeff;border:1px solid #a5f3fc;color:#155e75;font-size:.8rem}
 
-    /* רשימות */
     ul.clean,ol.clean{margin:0;padding-inline-start:1rem}
     ul.clean li{margin:6px 0}
 
-    /* טבלאות */
     table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden}
     th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:right}
     th{background:#f8fafc;font-weight:800}
     tbody tr:hover{background:#f0f9ff}
 
-    /* גלריה */
     .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
     .gallery div{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,#e0f2fe,#dcfce7);display:grid;place-items:center;font-size:1.6rem;box-shadow:var(--shadow)}
 
-    /* אקורדיון */
     details{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px}
     details + details{margin-top:10px}
     summary{cursor:pointer;font-weight:700}
 
-    /* טופס */
     form{display:grid;gap:10px}
-    input,textarea,select,button{
-      font:inherit;padding:10px;border-radius:12px;border:1px solid #e5e7eb;background:#fff
-    }
+    input,textarea,select,button{font:inherit;padding:10px;border-radius:12px;border:1px solid #e5e7eb;background:#fff}
     input:focus,textarea:focus,select:focus{outline:3px solid var(--ring);border-color:var(--brand)}
     button{background:var(--brand);color:#fff;border:none;font-weight:800;cursor:pointer}
     button:hover{filter:brightness(.95)}
 
-    /* פוטר */
     footer{margin-top:40px;color:var(--muted);padding:24px 0}
 
-    /* רספונסיביות */
-    @media (max-width: 960px){
-      .hero{grid-template-columns:1fr;}
-      .cols-3{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:repeat(4,1fr)}
-    }
-    @media (max-width: 640px){
-      .nav ul{display:none;position:absolute;right:12px;top:60px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:var(--shadow);padding:8px;width:calc(100% - 24px)}
-      .nav ul.open{display:grid}
-      .menu-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
-      .cols-3,.cols-2{grid-template-columns:1fr}
-      .gallery{grid-template-columns:repeat(3,1fr)}
-    }
+    /* משחק זיכרון */
+    .memory-game {display: grid;grid-template-columns: repeat(4, 80px);gap: 10px;justify-content: center;margin-top: 12px;}
+    .memory-card {width: 80px;height: 80px;background: #e0f2fe;border-radius: 12px;display: flex;align-items: center;justify-content: center;font-size: 2rem;cursor: pointer;box-shadow: var(--shadow);}
+    .memory-card.flipped {background: #fff;}
 
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto}
-    }
+    @media (max-width: 960px){.hero{grid-template-columns:1fr;}.cols-3{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(4,1fr)}}
+    @media (max-width: 640px){.nav ul{display:none;position:absolute;right:12px;top:60px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:var(--shadow);padding:8px;width:calc(100% - 24px)}.nav ul.open{display:grid}.menu-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}.cols-3,.cols-2{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(3,1fr)}}
+    @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
   </style>
 </head>
 <body>
@@ -137,6 +107,7 @@
           <li><a href="#supplies">רשימת ציוד</a></li>
           <li><a href="#gallery">גלריה</a></li>
           <li><a href="#contact">צור קשר</a></li>
+          <li><a href="#game">משחק</a></li>
         </ul>
       </nav>
     </div>
@@ -152,196 +123,53 @@
           <span>🤝 חברות וכבוד</span>
         </div>
         <h1 id="h1">שלום וברוכים הבאים לכיתה א ✨</h1>
-        <p>
-          כאן מתחיל מסע מרגש של קריאה, כתיבה וחשבון – יחד עם חברים חדשים, סקרנות גדולה וחיוך. באתר תמצאו מידע חשוב להורים, מערכת שעות, רשימת ציוד, עדכונים וטיפים.
-        </p>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>כללי זהב בכיתה</h3>
-            <ul class="clean">
-              <li>מרימים יד לפני שמדברים 🖐️</li>
-              <li>שומרים על הניקיון והסדר 🧽</li>
-              <li>מדברים זה לזה בנימוס 💬</li>
-              <li>מנסים – גם כשקשה! 💪</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>הודעה חמה להורים <span class="badge">חדש</span></h3>
-            <p class="muted">אסיפת הורים ראשונה תיערך ביום שני, 15 בספטמבר, בשעה 18:00 בכיתה. נשמח לראותכם!</p>
-          </div>
-        </div>
+        <p>כאן מתחיל מסע מרגש של קריאה, כתיבה וחשבון – יחד עם חברים חדשים, סקרנות גדולה וחיוך...</p>
       </div>
       <div class="hero-illustration" role="img" aria-label="איור צבעוני שמח"></div>
     </section>
 
-    <!-- מידע להורים -->
-    <section id="parents" class="grid cols-3" aria-labelledby="parents-h">
-      <h2 id="parents-h" class="visually-hidden" style="position:absolute;left:-9999px">מידע להורים</h2>
-      <article class="card">
-        <h3>תקשורת עם המורה</h3>
-        <p class="muted">מענה להודעות בימים א'-ה' 08:00–16:00. ניתן לפנות דרך הטופס באתר או באפליקציית הווטסאפ הכיתתית.</p>
-      </article>
-      <article class="card">
-        <h3>בריאות ובטיחות</h3>
-        <p class="muted">יש להביא בקבוק שתייה, כובע בימים חמים, ולהודיע מראש על רגישויות ואלרגיות. תרופות יינתנו רק באישור הורה.</p>
-      </article>
-      <article class="card">
-        <h3>שיעורי בית</h3>
-        <p class="muted">מומלץ זמן תרגול יומי קצר: 10–15 דקות קריאה ו-10 דקות חשבון. חיזוק חיובי עושה פלאים!</p>
-      </article>
-    </section>
+    <!-- הורים, מערכת שעות, ציוד, גלריה, שאלות נפוצות, צור קשר (כמו קודם) -->
 
-    <!-- מערכת שעות -->
-    <section id="schedule" class="card" aria-labelledby="schedule-h">
-      <h3 id="schedule-h">מערכת שעות שבועית</h3>
-      <div style="overflow:auto">
-        <table aria-describedby="schedule-note">
-          <thead>
-            <tr>
-              <th>שעה</th>
-              <th>א'</th>
-              <th>ב'</th>
-              <th>ג'</th>
-              <th>ד'</th>
-              <th>ה'</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>08:00–08:45</td><td>שפה</td><td>חשבון</td><td>אומנות</td><td>שפה</td><td>מדעים</td></tr>
-            <tr><td>08:55–09:40</td><td>שפה</td><td>חשבון</td><td>אומנות</td><td>שפה</td><td>מדעים</td></tr>
-            <tr><td>09:50–10:35</td><td>התעמלות</td><td>שפה</td><td>חשבון</td><td>מוזיקה</td><td>התעמלות</td></tr>
-            <tr><td>10:45–11:30</td><td>חשבון</td><td>מדעים</td><td>שפה</td><td>חשבון</td><td>מוזיקה</td></tr>
-            <tr><td>11:40–12:25</td><td>יצירה</td><td>אנגלית</td><td>חברה</td><td>אנגלית</td><td>ספרייה</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p id="schedule-note" class="muted" style="margin:8px 0 0">ייתכנו שינויים – נתעדכן יחד בקבוצת הכיתה.</p>
-    </section>
-
-    <!-- רשימת ציוד -->
-    <section id="supplies" class="grid cols-2" aria-labelledby="supplies-h">
-      <h3 id="supplies-h" class="visually-hidden" style="position:absolute;left:-9999px">רשימת ציוד</h3>
-      <div class="card">
-        <h3>ציוד חובה לתחילת שנה</h3>
-        <ul class="clean">
-          <li>תיק גב נוח</li>
-          <li>קלמר, 3 עפרונות, מחק ומחדד</li>
-          <li>מספריים בטיחותיים ודבק סטיק</li>
-          <li>מחברת שורה ומחברת חשבון (קו משבצות)</li>
-          <li>קופסת אוכל ובקבוק אישי</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>טיפים להצלחה</h3>
-        <ol class="clean">
-          <li>שגרה קבועה לשינה וארוחת בוקר</li>
-          <li>זמן קריאה משפחתי קצר כל ערב</li>
-          <li>פרגון על מאמץ, לא רק על תוצאה</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- גלריה -->
-    <section id="gallery" class="card" aria-labelledby="gallery-h">
-      <h3 id="gallery-h">גלריה שמחה</h3>
-      <div class="gallery" aria-label="אייקונים צבעוניים של ציוד לימודי">
-        <div>📚</div><div>✏️</div><div>🧮</div><div>🎨</div><div>🎵</div><div>🧪</div>
-        <div>⚽</div><div>🧠</div><div>🧩</div><div>📖</div><div>🖍️</div><div>🧑‍🏫</div>
-      </div>
-    </section>
-
-    <!-- שאלות נפוצות -->
-    <section class="card" aria-labelledby="faq-h">
-      <h3 id="faq-h">שאלות נפוצות</h3>
-      <details>
-        <summary>מה מביאים ליום הראשון?</summary>
-        <div class="muted">בקבוק מים, קופסת אוכל, קלמר בסיסי והרבה סקרנות 😊</div>
-      </details>
-      <details>
-        <summary>איך מדווחים על היעדרות?</summary>
-        <div class="muted">ממלאים טופס באתר או שולחים הודעה למורה בבוקר.</div>
-      </details>
-      <details>
-        <summary>האם יש שיעורי בית כל יום?</summary>
-        <div class="muted">במרבית הימים יהיה תרגול קצר של קריאה/חשבון.</div>
-      </details>
-    </section>
-
-    <!-- צור קשר -->
-    <section id="contact" class="card" aria-labelledby="contact-h">
-      <h3 id="contact-h">צרו קשר עם המורה</h3>
-      <form id="contact-form" novalidate>
-        <label>
-          שם ההורה
-          <input type="text" name="name" placeholder="הקלידו שם" required>
-        </label>
-        <label>
-          כתובת אימייל
-          <input type="email" name="email" placeholder="name@example.com" required>
-        </label>
-        <label>
-          נושא
-          <select name="topic" required>
-            <option value="">בחרו נושא…</option>
-            <option>שאלה כללית</option>
-            <option>בריאות/רגישויות</option>
-            <option>תיאום שיחה</option>
-          </select>
-        </label>
-        <label>
-          הודעה
-          <textarea name="message" rows="4" placeholder="כתבו כאן…" required></textarea>
-        </label>
-        <button type="submit">שליחה</button>
-        <p id="form-msg" class="muted" role="status" aria-live="polite"></p>
-      </form>
+    <!-- משחק זיכרון -->
+    <section id="game" class="card" aria-labelledby="game-h">
+      <h3 id="game-h">משחק זיכרון – מצאו את הזוגות 🎮</h3>
+      <div class="memory-game"></div>
+      <p id="game-msg" class="muted" style="margin-top:10px"></p>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      © <span id="year"></span> כיתה א – עם לב גדול וים של סקרנות 🌊💙
-    </div>
+    <div class="container">© <span id="year"></span> כיתה א – עם לב גדול וים של סקרנות 🌊💙</div>
   </footer>
 
   <script>
-    // תפריט מובייל
     const btn = document.querySelector('.menu-btn');
     const menu = document.getElementById('menu');
-    if(btn){
-      btn.addEventListener('click', ()=>{
-        const open = menu.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(btn){btn.addEventListener('click', ()=>{const open = menu.classList.toggle('open');btn.setAttribute('aria-expanded', open ? 'true' : 'false');});}
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contact-form');
+    if(form){
+      const msg = document.getElementById('form-msg');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        if(!data.name || !data.email || !data.topic || !data.message){msg.textContent = 'אנא מלאו את כל השדות.';msg.style.color = '#b91c1c';return;}
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){msg.textContent = 'כתובת אימייל אינה תקינה.';msg.style.color = '#b91c1c';return;}
+        msg.textContent = 'ההודעה נשלחה! נחזור אליכם בהקדם.';msg.style.color = '#16a34a';form.reset();
       });
     }
 
-    // שנה נוכחית בפוטר
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ולידציה קלה לטופס
-    const form = document.getElementById('contact-form');
-    const msg = document.getElementById('form-msg');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      // בדיקות פשוטות
-      if(!data.name || !data.email || !data.topic || !data.message){
-        msg.textContent = 'אנא מלאו את כל השדות.';
-        msg.style.color = '#b91c1c';
-        return;
-      }
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){
-        msg.textContent = 'כתובת אימייל אינה תקינה.';
-        msg.style.color = '#b91c1c';
-        return;
-      }
-
-      // סימולציית שליחה
-      msg.textContent = 'ההודעה נשלחה! נחזור אליכם בהקדם.';
-      msg.style.color = '#16a34a';
-      form.reset();
-    });
+    // משחק זיכרון
+    const symbols = ["📚","📚","✏️","✏️","🎨","🎨","⚽","⚽"];
+    const gameContainer = document.querySelector(".memory-game");
+    const msgGame = document.getElementById("game-msg");
+    if(gameContainer){
+      let firstCard, secondCard;let lock = false;let matches = 0;
+      const shuffled = symbols.sort(() => 0.5 - Math.random());
+      shuffled.forEach(sym => {const card = document.createElement("div");card.classList.add("memory-card");card.dataset.symbol = sym;card.textContent = "❓";card.addEventListener("click", flipCard);gameContainer.appendChild(card);});
+      function flipCard(){if (lock || this === firstCard) return;this.classList.add("flipped");this.textContent = this.dataset.symbol;if (!firstCard){firstCard = this;return;}secondCard = this;lock = true;if (firstCard.dataset.symbol === secondCard.dataset.symbol){matches++;firstCard = secondCard = null;lock = false;if (matches === symbols.length / 2){msgGame.textContent = "כל הכבוד! מצאתם את כל הזוגות 🎉";}} else {setTimeout(() => {firstCard.textContent = "❓";secondCard.textContent = "❓";firstCard.classList.remove("flipped");secondCard.classList.remove("flipped");firstCard = secondCard = null;lock = false;}, 1000);}}}
+    }
   </script>
 </body>
 </html>

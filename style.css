@@ -1,60 +1,101 @@
-/* עיצוב כללי */
 :root {
-  --primary: #0ea5e9;
+  --primary: #2563eb;
   --light: #f0f9ff;
+  --text: #333;
   --shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
+  font-family: "Alef", Arial, sans-serif;
   background: var(--light);
-  color: #333;
+  color: var(--text);
   line-height: 1.6;
 }
 
 header {
-  text-align: center;
   background: var(--primary);
   color: white;
-  padding: 20px;
-  box-shadow: var(--shadow);
+  padding: 1rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0.5rem 0;
+}
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
 }
 
 main {
-  padding: 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  padding: 1rem;
 }
 
 .card {
   background: white;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 1rem;
+  margin: 1rem 0;
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
 
-footer {
+#hero {
   text-align: center;
-  padding: 12px;
-  background: #e2e8f0;
-  margin-top: 20px;
-  font-size: 14px;
+  padding: 2rem;
+  background: #dbeafe;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
-/* משחק זיכרון */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+input, textarea, button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+}
+button {
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #1e40af;
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* 🎮 משחק זיכרון */
 .memory-game {
   display: grid;
-  grid-template-columns: repeat(4, 80px);
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   gap: 10px;
-  justify-content: center;
-  margin-top: 12px;
+  justify-items: center;
+  margin-top: 1rem;
 }
-
 .memory-card {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background: #e0f2fe;
   border-radius: 12px;
   display: flex;
@@ -64,15 +105,23 @@ footer {
   cursor: pointer;
   box-shadow: var(--shadow);
   user-select: none;
-  transition: background 0.3s;
+  transition: transform 0.3s;
 }
-
+.memory-card:hover {
+  transform: scale(1.05);
+}
 .memory-card.flipped {
   background: #fff;
 }
 
 .muted {
-  color: gray;
-  text-align: center;
-  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 📱 רספונסיביות */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.4rem; }
+  nav { display: flex; flex-wrap: wrap; justify-content: center; }
+  nav a { margin: 0.25rem; }
 }

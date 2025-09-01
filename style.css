@@ -1,9 +1,13 @@
 :root {
   --primary: #2563eb;
+  --primary-hover: #1e40af;
   --light: #f0f9ff;
   --text: #333;
-  --shadow: 0 2px 6px rgba(0,0,0,0.1);
+  --shadow: 0 4px 12px rgba(0,0,0,0.1); /* Slightly more prominent shadow */
 }
+
+/* Import Alef font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
 
 body {
   margin: 0;
@@ -11,117 +15,171 @@ body {
   background: var(--light);
   color: var(--text);
   line-height: 1.6;
+  direction: rtl; /* Set direction for the entire page */
+  text-align: right;
 }
 
 header {
   background: var(--primary);
   color: white;
-  padding: 1rem;
+  padding: 1.5rem 1rem; /* Increased vertical padding */
   text-align: center;
 }
 header h1 {
   margin: 0.5rem 0;
+  font-size: 2.2rem; /* Larger heading */
 }
 nav {
-  margin-top: 0.5rem;
+  margin-block-start: 1rem;
 }
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 0.5rem;
+  margin-inline: 0.75rem; /* Using logical property */
   font-weight: bold;
+  padding-block: 0.5rem;
+  transition: text-decoration 0.2s ease, opacity 0.2s ease;
 }
-nav a:hover {
+nav a:hover, nav a:focus { /* Added focus state for accessibility */
   text-decoration: underline;
+  opacity: 0.8;
 }
 
 main {
-  max-width: 1000px;
+  max-width: 1100px; /* Slightly wider main container */
   margin: auto;
-  padding: 1rem;
+  padding: 1.5rem; /* Increased padding */
 }
 
 .card {
   background: white;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 12px;
+  padding: 2rem; /* Increased padding */
+  margin-block: 2rem;
+  border-radius: 16px; /* Slightly more rounded corners */
   box-shadow: var(--shadow);
+}
+.card h3 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--primary);
+  padding-block-end: 0.5rem;
+  margin-block-end: 1.5rem;
 }
 
 #hero {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem; /* Increased padding */
   background: #dbeafe;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  border-radius: 16px;
+  margin-block-end: 2rem;
+}
+#hero h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+#hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 1rem auto 0;
 }
 
+ul, ol {
+  padding: 0;
+  list-style-position: inside; /* Ensures bullets/numbers are inside */
+}
+
+li {
+  padding: 0.5rem 0;
+}
+
+/* Form Styles */
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
 input, textarea, button {
-  padding: 0.5rem;
+  padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  direction: rtl;
+  text-align: right;
+}
+input:focus, textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: transparent;
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 button {
   background: var(--primary);
   color: white;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
-button:hover {
-  background: #1e40af;
+button:hover, button:focus {
+  background: var(--primary-hover);
+  outline: none;
 }
 
 footer {
   background: var(--primary);
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem;
+  margin-block-start: 3rem;
 }
 
-/* 🎮 משחק זיכרון */
+/* 🎮 Memory Game */
 .memory-game {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Larger cards */
+  gap: 15px;
   justify-items: center;
-  margin-top: 1rem;
+  margin-block-start: 1.5rem;
 }
 .memory-card {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   background: #e0f2fe;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem; /* Larger icons */
   cursor: pointer;
   box-shadow: var(--shadow);
   user-select: none;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .memory-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.08); /* More noticeable hover effect */
 }
 .memory-card.flipped {
   background: #fff;
+  box-shadow: none; /* No shadow when flipped */
 }
 
 .muted {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
+  text-align: center;
+  margin-block-start: 1rem;
 }
 
-/* 📱 רספונסיביות */
+/* 📱 Responsiveness */
 @media (max-width: 768px) {
-  header h1 { font-size: 1.4rem; }
-  nav { display: flex; flex-wrap: wrap; justify-content: center; }
-  nav a { margin: 0.25rem; }
+  main {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
 }

@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>שלום כיתה א</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שלום כיתה א׳</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>שלום כיתה א 🎒</h1>
-    <p>ברוכים הבאים לאתר לימודי וחווייתי לכיתה א</p>
+    <h1>שלום כיתה א׳ ✨</h1>
+    <nav>
+      <a href="#about">על כיתה א׳</a>
+      <a href="#tips">טיפים להורים</a>
+      <a href="#game">משחק</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
   </header>
 
   <main>
-    <section class="card">
-      <h2>מידע לתלמידים</h2>
-      <p>באתר זה תמצאו מידע, טיפים ומשחקים שיעזרו לכם להתחיל את השנה בכיף!</p>
+    <section id="hero">
+      <h2>תחילת מסע מרגש</h2>
+      <p>כיתה א׳ היא שלב חשוב בחיי כל ילד – זהו השלב שבו לומדים לקרוא, לכתוב, להתחבר לחברים חדשים ולגלות עולם חדש של ידע.</p>
     </section>
 
-    <!-- משחק זיכרון -->
-    <section id="game" class="card" aria-labelledby="game-h">
-      <h2 id="game-h">משחק זיכרון – מצאו את הזוגות 🎮</h2>
+    <section id="about" class="card">
+      <h3>מה מחכה בכיתה א׳?</h3>
+      <ul>
+        <li>📚 לימוד קריאה וכתיבה</li>
+        <li>🔢 צעדים ראשונים בחשבון</li>
+        <li>🎨 פיתוח יצירתיות ואמנות</li>
+        <li>🤝 בניית חברויות חדשות</li>
+      </ul>
+    </section>
+
+    <section id="tips" class="card">
+      <h3>טיפים להורים</h3>
+      <ol>
+        <li>שמרו על שגרה ברורה בבית</li>
+        <li>עודדו קריאה יומיומית יחד עם הילד</li>
+        <li>הכינו ציוד בית ספרי בצורה נעימה</li>
+        <li>הקשיבו לילד ושתפו בחוויות</li>
+      </ol>
+    </section>
+
+    <section id="game" class="card">
+      <h3>משחק זיכרון – מצאו את הזוגות 🎮</h3>
       <div class="memory-game"></div>
       <p id="game-msg" class="muted"></p>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>צור קשר</h3>
+      <form>
+        <label>שם מלא: <input type="text" required></label>
+        <label>אימייל: <input type="email" required></label>
+        <label>הודעה: <textarea required></textarea></label>
+        <button type="submit">שליחה</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 שלום כיתה א</p>
+    <p>© 2025 שלום כיתה א׳ – כל הזכויות שמורות</p>
   </footer>
 
   <script src="script.js"></script>
